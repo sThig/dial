@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>SVG Doughnut chart with animation and tooltip</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.css">
+</head>
+
+<body>
+
+  <div class="spin-container">
+    <section>
+        <h1 class="numbers" id="myTargetElement">0</h1>
+        <p class="subText" id="subText">MINUTES</p>
+    </section>
+    <div class="pendulum" id="pendulum">
+      <img src="img/pendy-01.svg">
+    </div>
+    <div class="circle" ></div>
+    <img id="spinner" class="spinner" src="img/spinner-01.svg">
+  </div>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+  <script src="js/rotate.js"></script>
+  <script src="js/countUp.js"></script>
+  <script src="js/dial.js"></script>
+
+</body>
+
+</html>
