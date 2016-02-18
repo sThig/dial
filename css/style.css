@@ -60,10 +60,10 @@
   margin-left: -45px;
 }
 
-.box_rotate {
-  transform: rotate(195deg);  /* Firefox 16+, IE 10+, Opera 12.50+ */
+/*.box_rotate {
+  transform: rotate(19deg); } /* Firefox 16+, IE 10+, Opera 12.50+ */
 
-}
+
 .box_transition {
   transition: all 1.3s ease;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.50+ */
 
