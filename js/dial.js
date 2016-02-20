@@ -5,10 +5,10 @@ $(function() {
   }
 
   $(document).ready(function() {
-    rotate($('#spinner'));
+    rotate($('.spinner'));
   });
 
-  $('#spinner').click(function() {
+  $('.spinner').click(function() {
     rotate($(this));
   });
 });
@@ -17,17 +17,17 @@ $(function() {
 
 //http://jsfiddle.net/NYJWx/4/
 
-var options = {
-  useEasing : false,
-  useGrouping : false,
-  separator : ',',
-  decimal : '.',
-  prefix : '',
-  suffix : ''
-};
-
-var numAnim = new CountUp("myTargetElement", 0, 5, 0, 0.5, options);
-numAnim.start();
+// var options = {
+//   useEasing : false,
+//   useGrouping : false,
+//   separator : ',',
+//   decimal : '.',
+//   prefix : '',
+//   suffix : ''
+// };
+//
+// var numAnim = new CountUp("myTargetElement", 0, 5, 0, 0.5, options);
+// numAnim.start();
 
 
 //when json file is called, pendulum swings to designation
@@ -42,7 +42,46 @@ numAnim.start();
 //the variable should go inside the css transform
 $.getJSON( "http://localhost:3000/ed_stats", function( ed_stats ) {
 
-  var degree = ed_stats[0]['started']*(360/10);
-  console.log(degree);
-  $('.pendulum').css({"transform": "rotate("+ degree + "deg)","transition": "all 1.3s ease"});
+
+  // console.log(degree, degreeWaiting);
+  $( ".spin-container" ).each(function( index ) {
+    if(index == 0){
+      var value = "started";
+    }
+    else if (index == 1){
+      var value = "waiting";
+    }
+    var minutes = ed_stats[0][value].toFixed(1);
+    if (minutes <= 0){
+      var degree = 0;
+      var minutes = 0;
+    }
+    else if (minutes > 10) {
+      var degree = 360-5
+      var minutes = "10+"
+    }
+    else {
+      var degree = minutes*(360/10);
+    }
+
+    $(this).find(".numbers").html(minutes);
+    console.log(degree)
+    $(this).find(".blowdup").css({"transform": "rotate("+ degree + "deg)","transition": "all 1.3s ease"});
+
+  });
+  // $('.pendulum').css({"transform": "rotate("+ degree + "deg)","transition": "all 1.3s ease"});
 });
+
+// $( ".numbers" ).each(function( index ) {
+//   if(index == 0){
+//     var value = "started";
+//   }
+//   else if (index == 1){
+//     var value = "waiting";
+//   }
+//   var degree = ed_stats[0][value]*(360/10)-5;
+//   var numAnim = new CountUp(this, 0, degree, 0, 0.5, options);
+//   numAnim.start();
+//
+// });
+// // $('.pendulum').css({"transform": "rotate("+ degree + "deg)","transition": "all 1.3s ease"});

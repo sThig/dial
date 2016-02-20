@@ -1,7 +1,8 @@
 {
   "ed_stats": [
     {
-      "started": 5
+      "started": 3,
+      "waiting": 9
     }
   ]
 }

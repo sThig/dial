@@ -33,27 +33,20 @@
       <p>Spin with one id <strong>shit's gonna be hard, yo.</strong>.</p>
       <div class="row">
         <div class="col-md-6">
-          <div class="spin-container"><!-- /circle -->
-            <section>
-                <h1 class="numbers" >0</h1><!-- /circle_content -->
-                <p class="subText">MINUTES</p><!-- /circle_content -->
-            </section>
-
-              <img class="blowdup" src="img/dial-01.svg">
-            <img id="spinner" class="spinner" src="img/spinner-01.svg">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="spin-container">
-
-              <h1 class="numbers" >0</h1>
-              <p class="subText" id="subText">MINUTES</p>
-            
-            <img class="blowdup" src="img/dial-01.svg">
-          <img id="spinner" class="spinner" src="img/spinner-01.svg">
-          </div>
-        </div>
-      </div>
+          <div class="circle">
+            <div class="circle__wrapper">
+              <div class="circle_content">
+                  <h1 class="numbers" >0</h1>
+                  <p class="subText">MINUTES</p>
+                <div class="pendulum">
+                  <img src="img/pendy-01.svg">
+                </div><!-- /pendulum -->
+                <!-- <div class="circle"></div> -->
+                <img id="spinner" class="spinner" src="img/spinner-01.svg">
+              </div>  <!-- /circle__wrapper -->
+            </div><!-- /circle-content -->
+          </div><!-- /circle -->
+        </div> <!-- /col-md-6 -->
   </div><!-- /container -->
 
   <script src="js/rotate.js"></script>
